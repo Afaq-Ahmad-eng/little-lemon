@@ -1,18 +1,15 @@
 import React from 'react'
 import Logo from '../assests/images/logo.jpg'
 import style from './Header.module.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function Header() {
   return (
     <>
-    <BrowserRouter>
-    <header>
-        <meta name="description" content="your text goes here"/>
-        <meta name="og:title" content="little lemon restaurant"/>
-        <meta name="og:description" content="We provide best food to you"/>
-    </header>
+    <div id='logo'>
+      <img src={Logo} alt='logo' id={style.logoImage}/>
+    </div>
+    <Router>
     <nav>
-    <img src={Logo} alt='logo' id={style.logoImage}/>
     <ul>
         <Link></Link>
     </ul>
@@ -20,7 +17,7 @@ function Header() {
     <Routes>
         <Route/>
     </Routes>
-    </BrowserRouter>
+    </Router>
     </>
   )
 }
