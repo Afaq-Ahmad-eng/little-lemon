@@ -1,0 +1,20 @@
+/* Logo div Styling */
+#logo{
+    display: flex;
+    justify-content: center;
+
+}
+/* navbar styling */
+.navbar li{
+    list-style: none;
+}
+/* Styling for Links */
+.navbar li Link{
+    text-decoration: none;
+} 
+/* Styling for Logo */
+#logoImage{
+    height: auto;
+    width: 25%;
+    margin: 1%;
+}
