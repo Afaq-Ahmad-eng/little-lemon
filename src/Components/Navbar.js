@@ -12,19 +12,20 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function Navbar() {
   return (
     <>
-    <div id={style.logo}>
-      <img src={Logo} alt='logo' id={style.logoImage}/>
-    </div>
+       
      <Router>
     <nav className={style.navbar}>
-    <ul>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
-        <li><Link to='/Reservation'>Reservation</Link></li>
-        <li><Link to='/Chicago'>Chicago</Link></li>
-        <li><Link to='/CustomersSay'>Customer Say</Link></li>
-        <li><Link to='/CallToAction'>Call To Action</Link></li>
-        <li><Link to='/Specials'>Specials</Link></li>
+    <ul className={style.navigation}>
+        <li><Link id={style.links} to='/about'>About</Link></li>
+        <li><Link id={style.links} to='/contact'>Contact</Link></li>
+        <li><Link id={style.links} to='/Reservation'>Reservation</Link></li>
+        <li><Link id={style.links} to='/Chicago'>Chicago</Link></li>
+        <li><Link id={style.links} to='/CustomersSay'>Customer Say</Link></li>
+        <li><Link id={style.links} to='/CallToAction'>Call To Action</Link></li>
+        <li><Link id={style.links} to='/Specials'>Specials</Link></li>
+         <div id={style.logo}>
+      <img src={Logo} alt='logo' id={style.logoImage}/>
+      </div>
     </ul>
     </nav>
     <Routes>
