@@ -1,10 +1,10 @@
-import Header from './Header';
-// import Footer from './Footer'
+// import HomePage from './HomePage';
+import Navbar from './Navbar'
 function App() {
   return (
     <>
-    <Header></Header>
-    {/* <Footer></Footer> */}
+    {/* <HomePage/> */}
+    <Navbar/>
     </>
   );
 }
