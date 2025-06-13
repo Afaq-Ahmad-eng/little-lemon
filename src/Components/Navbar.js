@@ -9,10 +9,10 @@ import CustomersSay from './CustomersSay'
 import CallToAction from './CallToAction'
 import Specials from './Specials'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Button } from '@chakra-ui/react'
 function Navbar() {
   return (
-    <>
-       
+    <> 
      <Router>
     <nav className={style.navbar}>
     <ul className={style.navigation}>
@@ -26,6 +26,8 @@ function Navbar() {
          <div id={style.logo}>
       <img src={Logo} alt='logo' id={style.logoImage}/>
       </div>
+      <Button>Sign In</Button>
+      <Button>Sign Up</Button>
     </ul>
     </nav>
     <Routes>
