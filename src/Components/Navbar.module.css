@@ -6,7 +6,7 @@ body{
 #logo{
     display: flex;
     justify-content: center;
-    height: 3rem;
+    height: 2rem;
     width: 30%;
 }
 /* navbar styling */
@@ -20,7 +20,6 @@ body{
   flex-wrap: wrap;
   gap: 16px;
   padding: 15px;
-  background: #EFEDEE;
   padding-left: 3rem;
 } 
 /* Styling for navbar links */
