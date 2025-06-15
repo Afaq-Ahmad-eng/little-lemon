@@ -1,6 +1,52 @@
-#footer{
-    background-color: #495E57;
-    color: #EDEFEE;
-    width: 100vw;
-    height: 10rem;
+/* Styling for complete Footer */
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  background-color: #4d6458;
+  flex-wrap: wrap;
+  color: white;
+}
+
+/* Styling for Footer Logo */
+#logoContainer,
+#socialMediaLinksContainer {
+  flex: 1;
+}
+#logoContainer h2,
+#socialMediaLinksContainer h2 {
+  font-size: 2rem ;
+}
+
+/* Links styling */
+#socialMediaLinksContainer{
+    display: flex;
+    flex-direction: column;
+}
+#footerLinks{
+  text-decoration: none;
+  width: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  align-items: center;
+  padding-left: 3rem;
+}
+.links{
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  border-radius: 5px;
+  background: white;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.links:hover{
+    background-color: #333;
+    color: white;
 }
