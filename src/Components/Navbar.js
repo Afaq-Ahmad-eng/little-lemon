@@ -6,7 +6,7 @@ import Contact from './Contact';
 import Reservation from './Reservation';
 import Chicago from './Chicago';
 import CustomersSay from './CustomersSay';
-import CallToAction from './CallToAction';
+import CallToAction from './CustomAlert';
 import Specials from './Specials';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -28,8 +28,6 @@ function Navbar() {
           <div className={style.logoContainer}>
             <img src={Logo} alt='logo' className={style.logoImage} />
           </div>
-          
-          {/* Hamburger Menu Button */}
           <button 
             className={`${style.hamburger} ${isMenuOpen ? style.active : ''}`} 
             onClick={toggleMenu}
