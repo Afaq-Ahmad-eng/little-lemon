@@ -1,39 +1,104 @@
-import style from './Footer.module.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Logo from '../assests/images/Logo-3.png'
+import { FaFacebookF, FaXTwitter, FaInstagram } from 'react-icons/fa6';
+import styles from './Footer.module.css';
+import Logo from '../assests/images/Logo-3.png';
 import About from './About';
 import Contact from './Contact';
 import Reservation from './Reservation';
-import Specials from './Specials';
 import Chicago from './Chicago';
+import CustomersSay from './CustomersSay';
+import CallToAction from './CustomAlert';
+import Specials from './Specials';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
 function Footer() {
   return (
-    <div id={style.footer}>
-       <div id={style.logoContainer}>
-        <h2>Logo</h2>
-        <img id={style.logoForFooter} src={Logo} alt='Logo_for_footer'/>
-       </div>
-       <div id={style.socialMediaLinksContainer}>
-        <h2>Links To Pages</h2>
-        <Router>
-        <nav id={style.footerLinks}>
-          <Link className={style.links} to='/about'>About</Link>
-          <Link className={style.links} to='/contact'>Contact</Link>
-          <Link className={style.links} to='/Reservation'>Reservation</Link>
-          <Link className={style.links} to='/specials'>Specials</Link>
-          <Link className={style.links} to='/Chicago'>Main Branch</Link>
-        </nav>
-        <Routes>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='/reservation' element={<Reservation/>}/>
+    <footer className={styles.footer}>
+      <div className={styles.footerContainer}>
+
+        {/* Logo section */}
+        <div className={styles.logoSection}>
+          <img src={Logo} alt="Little Lemon Restaurant" className={styles.logo} />
+          <p className={styles.tagline}>Mediterranean cuisine with a modern twist</p>
+        </div>
+
+        {/* Navigation links */}
+        <div className={styles.linksSection}>
+          <h3 className={styles.sectionTitle}>Navigation</h3>
+            <Router>
+          <ul className={styles.navLinks}>
+            <li><Link to="/about" className={styles.link}>About</Link></li>
+            <li><Link to="/contact" className={styles.link}>Contact</Link></li>
+            <li><Link to="/reservation" className={styles.link}>Reservation</Link></li>
+            <li><Link to="/specials" className={styles.link}>Specials</Link></li>
+            <li><Link to="/chicago" className={styles.link}>Main Branch</Link></li>
+          </ul>
+            <Routes>
+              <Route path='/About' element={<About/>}/>
+          <Route path='/Contact' element={<Contact/>}/>
+          <Route path='/Reservation' element={<Reservation/>}/>
+          <Route path='/Chicago' element={<Chicago/>}/>
+          <Route path='/CustomersSay' element={<CustomersSay/>}/>
+          <Route path='/CallToAction' element={<CallToAction/>}/>
+          <Route path='/CallToAction' element={<CallToAction/>}/>
           <Route path='/Specials' element={<Specials/>}/>
-          <Route path='/chicago' element={<Chicago/>}/>
-        </Routes>
-        </Router>
-       </div>
-    </div>
-  )
+            </Routes>
+            </Router>
+        </div>
+
+        {/* Contact information */}
+        <div className={styles.contactSection}>
+          <h3 className={styles.sectionTitle}>Contact Us</h3>
+          <address className={styles.contactInfo}>
+            <p>19/20 Royal Hibernian Way</p>
+            <p>Duke Lane Upper, Dublin 2</p>
+            <p><a href="tel:+019058777" className={styles.link}>01-905 8777</a></p>
+            <p><a href="mailto:hello@littlelemon.ie" className={styles.link}>hello@littlelemon.ie</a></p>
+          </address>
+        </div>
+
+        {/* Social media links */}
+        <div className={styles.socialSection}>
+          <h3 className={styles.sectionTitle}>Follow Us</h3>
+          <div className={styles.socialLinks}>
+            <a
+              href="https://www.facebook.com/LittleLemonRHW/"
+              aria-label="Facebook"
+              className={styles.socialLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className={styles.socialIcon} />
+            </a>
+            <a
+              href="https://x.com/LittleLemonRHW/"
+              aria-label="Twitter"
+              className={styles.socialLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter className={styles.socialIcon} />
+            </a>
+            <a
+              href="https://www.instagram.com/LittleLemonRHW/"
+              aria-label="Instagram"
+              className={styles.socialLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className={styles.socialIcon} />
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Copyright section */}
+      <div className={styles.copyrightSection}>
+        <p>© 2025 Little Lemon, All rights reserved.</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
