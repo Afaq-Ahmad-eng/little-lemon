@@ -6,26 +6,21 @@ import Contact from './Contact';
 import Reservation from './Reservation';
 import Chicago from './Chicago';
 import CustomersSay from './CustomersSay';
-import CallToAction from './CustomAlert';
+import CallToAction from './ConfirmedBooking';
 import Specials from './Specials';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {Routes, Route, Link } from 'react-router-dom';
 
 
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-
-        {/* Logo section */}
         <div className={styles.logoSection}>
           <img src={Logo} alt="Little Lemon Restaurant" className={styles.logo} />
           <p className={styles.tagline}>Mediterranean cuisine with a modern twist</p>
         </div>
-
-        {/* Navigation links */}
         <div className={styles.linksSection}>
           <h3 className={styles.sectionTitle}>Navigation</h3>
-            <Router>
           <ul className={styles.navLinks}>
             <li><Link to="/about" className={styles.link}>About</Link></li>
             <li><Link to="/contact" className={styles.link}>Contact</Link></li>
@@ -43,10 +38,7 @@ function Footer() {
           <Route path='/CallToAction' element={<CallToAction/>}/>
           <Route path='/Specials' element={<Specials/>}/>
             </Routes>
-            </Router>
         </div>
-
-        {/* Contact information */}
         <div className={styles.contactSection}>
           <h3 className={styles.sectionTitle}>Contact Us</h3>
           <address className={styles.contactInfo}>
@@ -56,8 +48,6 @@ function Footer() {
             <p><a href="mailto:hello@littlelemon.ie" className={styles.link}>hello@littlelemon.ie</a></p>
           </address>
         </div>
-
-        {/* Social media links */}
         <div className={styles.socialSection}>
           <h3 className={styles.sectionTitle}>Follow Us</h3>
           <div className={styles.socialLinks}>
@@ -90,10 +80,7 @@ function Footer() {
             </a>
           </div>
         </div>
-
       </div>
-
-      {/* Copyright section */}
       <div className={styles.copyrightSection}>
         <p>© 2025 Little Lemon, All rights reserved.</p>
       </div>
