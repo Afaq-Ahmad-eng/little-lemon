@@ -6,9 +6,9 @@ import Contact from './Contact';
 import Reservation from './Reservation';
 import Chicago from './Chicago';
 import CustomersSay from './CustomersSay';
-import CallToAction from './CustomAlert';
+import CallToAction from './ConfirmedBooking';
 import Specials from './Specials';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,6 @@ function Navbar() {
 
   return (
     <>
-      <Router>
         <nav className={style.navbar}>
           <div className={style.logoContainer}>
             <img src={Logo} alt='logo' className={style.logoImage} />
@@ -64,7 +63,6 @@ function Navbar() {
           <Route path='/CallToAction' element={<CallToAction/>}/>
           <Route path='/Specials' element={<Specials/>}/>
         </Routes>
-      </Router>
     </>
   )
 }
