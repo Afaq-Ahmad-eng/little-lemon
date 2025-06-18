@@ -1,10 +1,14 @@
-// import HomePage from './HomePage';
-import Navbar from './Navbar'
+import {Routes, Route } from 'react-router-dom';
+import Main from './Main';
+import ConfirmedBooking from './ConfirmedBooking';
+
 function App() {
   return (
     <>
-    {/* <HomePage/> */}
-    <Navbar/>
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/confirmed" element={<ConfirmedBooking isOpen={true}>Booking Confirmed!</ConfirmedBooking>} />
+    </Routes>
     </>
   );
 }
