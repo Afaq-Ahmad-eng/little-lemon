@@ -10,10 +10,21 @@ const BookingForm = ({
   occasion,
   setOccasion,
   availableTimes,
-  onSubmit,
+  submitForm,
 }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+    submitForm(formData);
+  };
+
   return (
-    <form onSubmit={onSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form} data-testid="form">
       <h2 className={styles.heading}>Make a Reservation</h2>
 
       <label htmlFor="res-date">Choose date</label>
@@ -34,9 +45,7 @@ const BookingForm = ({
         className={styles.input}
       >
         {availableTimes.map((t) => (
-          <option key={t} value={t}>
-            {t}
-          </option>
+          <option key={t} value={t}>{t}</option>
         ))}
       </select>
 
