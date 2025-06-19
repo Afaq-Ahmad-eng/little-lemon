@@ -14,13 +14,10 @@ const BookingForm = ({
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      date,
-      time,
-      guests,
-      occasion,
-    };
-    submitForm(formData);
+  if (!date || !time || guests < 1 || !occasion) {
+    return; 
+  }
+  submitForm({ date, time, guests, occasion});
   };
 
   return (
@@ -43,6 +40,7 @@ const BookingForm = ({
         value={time}
         onChange={(e) => setTime(e.target.value)}
         className={styles.input}
+        required
       >
         {availableTimes.map((t) => (
           <option key={t} value={t}>{t}</option>
@@ -67,6 +65,7 @@ const BookingForm = ({
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
         className={styles.input}
+        required
       >
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
@@ -75,6 +74,7 @@ const BookingForm = ({
       <input
         type="submit"
         value="Make Your Reservation"
+        aria-label="On Click"
         className={styles.button}
       />
     </form>
