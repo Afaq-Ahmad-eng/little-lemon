@@ -25,10 +25,8 @@ const fetchAPI = function (date) {
 };
 
 const submitAPI = function (formData) {
-    console.log(formData);
-    
+  console.log(formData);
   return true;
 };
-
 
 export { fetchAPI, submitAPI };
