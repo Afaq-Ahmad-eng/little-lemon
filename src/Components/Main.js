@@ -66,7 +66,7 @@ const Main = () => {
             <li><strong>Guests:</strong> {submittedData.guests}</li>
             <li><strong>Occasion:</strong> {submittedData.occasion}</li>
           </ul>
-          <h2>Thank you, we excited to see you!</h2>
+          <h2>Thank you, we are excited to see you!</h2>
           </div>
         )}
       </ConfirmedBooking>
