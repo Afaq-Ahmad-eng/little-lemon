@@ -74,3 +74,110 @@ describe("BookingForm - Dynamic Behavior", () => {
     });
   });
 });
+
+describe("BookingForm - HTML5 Validation Attributes", () => {
+  it("has required attribute on date input", () => {
+    render(<BookingForm {...{
+      date: "",
+      setDate: jest.fn(),
+      time: "",
+      setTime: jest.fn(),
+      guests: 0,
+      setGuests: jest.fn(),
+      occasion: "",
+      setOccasion: jest.fn(),
+      submitForm: jest.fn(),
+    }} availableTimes={["17:00"]} />);
+
+    const dateInput = screen.getByLabelText(/choose date/i);
+    expect(dateInput).toHaveAttribute("required");
+  });
+
+  it("has required and min attributes on guests input", () => {
+    render(<BookingForm {...{
+      date: "",
+      setDate: jest.fn(),
+      time: "",
+      setTime: jest.fn(),
+      guests: 0,
+      setGuests: jest.fn(),
+      occasion: "",
+      setOccasion: jest.fn(),
+      submitForm: jest.fn(),
+    }} availableTimes={["17:00"]} />);
+
+    const guestsInput = screen.getByLabelText(/number of guests/i);
+    expect(guestsInput).toHaveAttribute("required");
+    expect(guestsInput).toHaveAttribute("min", "1");
+  });
+
+  it("has required attribute on time select", () => {
+    render(<BookingForm {...{
+      date: "",
+      setDate: jest.fn(),
+      time: "",
+      setTime: jest.fn(),
+      guests: 0,
+      setGuests: jest.fn(),
+      occasion: "",
+      setOccasion: jest.fn(),
+      submitForm: jest.fn(),
+    }} availableTimes={["17:00"]} />);
+
+    const timeSelect = screen.getByLabelText(/choose time/i);
+    expect(timeSelect).toHaveAttribute("required");
+  });
+});
+
+
+
+describe("BookingForm - JavaScript Validation Behavior", () => {
+  const setup = () => {
+    const props = {
+      date: "",
+      setDate: jest.fn(),
+      time: "",
+      setTime: jest.fn(),
+      guests: 0,
+      setGuests: jest.fn(),
+      occasion: "",
+      setOccasion: jest.fn(),
+      submitForm: jest.fn(),
+    };
+    render(<BookingForm {...props} availableTimes={["17:00", "18:00"]} />);
+    return props;
+  };
+
+  it("does not call submitForm if guests field is empty or invalid", () => {
+    const props = setup();
+
+    const form = screen.getByTestId("form");
+    fireEvent.change(screen.getByLabelText(/number of guests/i), {
+      target: { value: "" },
+    });
+    fireEvent.submit(form);
+
+    expect(props.submitForm).not.toHaveBeenCalled();
+  });
+
+  it("calls submitForm when all fields are valid", () => {
+    const props = {
+      date: "2025-06-20",
+      setDate: jest.fn(),
+      time: "17:00",
+      setTime: jest.fn(),
+      guests: 2,
+      setGuests: jest.fn(),
+      occasion: "Anniversary",
+      setOccasion: jest.fn(),
+      submitForm: jest.fn(),
+    };
+
+    render(<BookingForm {...props} availableTimes={["17:00"]} />);
+
+    const form = screen.getByTestId("form");
+    fireEvent.submit(form);
+
+    expect(props.submitForm).toHaveBeenCalled();
+  });
+});
