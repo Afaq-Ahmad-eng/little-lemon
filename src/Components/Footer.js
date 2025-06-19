@@ -1,15 +1,6 @@
 import { FaFacebookF, FaXTwitter, FaInstagram } from 'react-icons/fa6';
 import styles from './Footer.module.css';
 import Logo from '../assests/images/Logo-3.png';
-import About from './About';
-import Contact from './Contact';
-import Reservation from './Reservation';
-import Chicago from './Chicago';
-import CustomersSay from './CustomersSay';
-import CallToAction from './ConfirmedBooking';
-import Specials from './Specials';
-import {Routes, Route, Link } from 'react-router-dom';
-
 
 function Footer() {
   return (
@@ -18,26 +9,6 @@ function Footer() {
         <div className={styles.logoSection}>
           <img src={Logo} alt="Little Lemon Restaurant" className={styles.logo} />
           <p className={styles.tagline}>Mediterranean cuisine with a modern twist</p>
-        </div>
-        <div className={styles.linksSection}>
-          <h3 className={styles.sectionTitle}>Navigation</h3>
-          <ul className={styles.navLinks}>
-            <li><Link to="/about" className={styles.link}>About</Link></li>
-            <li><Link to="/contact" className={styles.link}>Contact</Link></li>
-            <li><Link to="/reservation" className={styles.link}>Reservation</Link></li>
-            <li><Link to="/specials" className={styles.link}>Specials</Link></li>
-            <li><Link to="/chicago" className={styles.link}>Main Branch</Link></li>
-          </ul>
-            <Routes>
-              <Route path='/About' element={<About/>}/>
-          <Route path='/Contact' element={<Contact/>}/>
-          <Route path='/Reservation' element={<Reservation/>}/>
-          <Route path='/Chicago' element={<Chicago/>}/>
-          <Route path='/CustomersSay' element={<CustomersSay/>}/>
-          <Route path='/CallToAction' element={<CallToAction/>}/>
-          <Route path='/CallToAction' element={<CallToAction/>}/>
-          <Route path='/Specials' element={<Specials/>}/>
-            </Routes>
         </div>
         <div className={styles.contactSection}>
           <h3 className={styles.sectionTitle}>Contact Us</h3>
